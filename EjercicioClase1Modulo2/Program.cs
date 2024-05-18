@@ -1,6 +1,6 @@
-﻿using EjercicioClase1Modulo2.Ejercicio_1;
-using EjercicioClase1Modulo2.Ejercicio_2;
+﻿
 using System.Text.Json;
+using EjercicioClase1Modulo2.Ejercicio1;
 
 namespace EjercicioClase1Modulo2
 {
@@ -22,8 +22,17 @@ namespace EjercicioClase1Modulo2
             var dataEjercicio3 = File.ReadAllText(pathEjercicio3);
 
 
+            var resultado = JsonSerializer.Deserialize<Persona>(dataEjercicio1);
+            var serializado = JsonSerializer.Serialize(resultado);
+            Console.WriteLine(serializado);
 
+            var resultado2 = JsonSerializer.Deserialize<Equipo>(dataEjercicio2);
+            var serializado2 = JsonSerializer.Serialize(resultado2);
+            Console.WriteLine(serializado2);
 
+            var resultado3 = JsonSerializer.Deserialize<Productos>(dataEjercicio3);
+            var serializado3 = JsonSerializer.Serialize(resultado3);
+            Console.WriteLine(serializado3);
         }
     }
 }
